@@ -52,6 +52,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 //     ),
                 //   ),
                 // ),
+                
                 Container(
                   width: 120,
                   height: 120,
