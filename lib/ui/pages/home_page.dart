@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        children: [buildProfile(), buildWalletCard()],
+        children: [buildProfile(), buildWalletCard(), buildLevel()],
       ),
     );
   }
@@ -144,25 +144,73 @@ class HomePage extends StatelessWidget {
             'Angga',
             style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
           ),
-          const SizedBox(height: 28,),
-          Text('**** **** **** 1280',
-          style: whiteTextStyle.copyWith(
-            fontSize: 18,
-            fontWeight: medium,
-            letterSpacing: 7.3,
-          ),),
-          const SizedBox(height: 25,),
-          Text('Balance',
-          style: whiteTextStyle.copyWith(
-            fontSize: 14,
-          ),),
-          const SizedBox(height: 0,),
-          Text('Rp 12.500',
-          style: whiteTextStyle.copyWith(
-            fontWeight: semiBold,
-            fontSize: 24,
-          ),)
+          const SizedBox(height: 28),
+          Text(
+            '**** **** **** 1280',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+              letterSpacing: 7.3,
+            ),
+          ),
+          const SizedBox(height: 25),
+          Text('Balance', style: whiteTextStyle.copyWith(fontSize: 14)),
+          const SizedBox(height: 0),
+          Text(
+            'Rp 12.500',
+            style: whiteTextStyle.copyWith(fontWeight: semiBold, fontSize: 24),
+          ),
+        ],
+      ),
+    );
+  }
 
+  Widget buildLevel() {
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: whiteColor,
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '55%',
+                style: greenTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: semiBold,
+                ),
+              ),
+              Text(
+                ' of Rp 20.000',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: semiBold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: LinearProgressIndicator(
+              value: 0.55,
+              minHeight: 5,
+              valueColor: AlwaysStoppedAnimation(greenColor),
+              backgroundColor: lightBackgroundColor,
+            ),
+          ),
         ],
       ),
     );
