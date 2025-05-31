@@ -388,22 +388,22 @@ class HomePage extends StatelessWidget {
               HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
                 title: 'Best tips for using a credit card Best tips for using a credit card',
-                url: 'https://www.google.com',
+                url: Uri.parse('https://www.google.com'),
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips2.png',
                 title: 'Spot the good pie of finance model',
-                url: 'https://www.google.com',
+                url: Uri.parse('https://youtu.be/F1sjJjmpQ6A?si=yvwtwAblM6cn2DA3'),
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips3.png',
                 title: 'Great hack to get better advices',
-                url: 'https://www.google.com',
+                url: Uri.parse('https://pub.dev/'),
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips4.png',
                 title: 'Save more penny buy this instead',
-                url: 'https://www.google.com',
+                url: Uri.parse('https://www.instagram.com/erlanggastrya_/'),
               ),
             ],
           ),
