@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          buildProfile(),
+          buildProfile(context),
           buildWalletCard(),
           buildLevel(),
           buildServies(),
@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildProfile() {
+  Widget buildProfile(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 40),
       child: Row(
@@ -101,29 +101,34 @@ class HomePage extends StatelessWidget {
           ),
           Column(
             children: [
-              Container(
-                width: 60,
-                height: 60,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage('assets/img_profile.png'),
-                  ),
-                ),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: 16,
-                    height: 16,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: whiteColor,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage('assets/img_profile.png'),
                     ),
-                    child: Center(
-                      child: Icon(
-                        Icons.check_circle,
-                        color: greenColor,
-                        size: 14,
+                  ),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 16,
+                      height: 16,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: whiteColor,
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.check_circle,
+                          color: greenColor,
+                          size: 14,
+                        ),
                       ),
                     ),
                   ),
@@ -371,7 +376,7 @@ class HomePage extends StatelessWidget {
 
   Widget buildFriendlyTips() {
     return Container(
-      margin: const EdgeInsets.only(top: 30,bottom: 50),
+      margin: const EdgeInsets.only(top: 30, bottom: 50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -387,13 +392,16 @@ class HomePage extends StatelessWidget {
             children: [
               HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
-                title: 'Best tips for using a credit card Best tips for using a credit card',
+                title:
+                    'Best tips for using a credit card Best tips for using a credit card',
                 url: Uri.parse('https://www.google.com'),
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips2.png',
                 title: 'Spot the good pie of finance model',
-                url: Uri.parse('https://youtu.be/F1sjJjmpQ6A?si=yvwtwAblM6cn2DA3'),
+                url: Uri.parse(
+                  'https://youtu.be/F1sjJjmpQ6A?si=yvwtwAblM6cn2DA3',
+                ),
               ),
               HomeTipsItem(
                 imageUrl: 'assets/img_tips3.png',
