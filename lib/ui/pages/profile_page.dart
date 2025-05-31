@@ -9,19 +9,22 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
+      // backgroundColor: lightBackgroundColor,
       appBar: AppBar(
-        backgroundColor: lightBackgroundColor,
-        elevation: 0,
-        // untuk versi android agar ketengah pakai centertitle, kalau ios defaultnya langsung tengah
-        centerTitle: true,
+        // backgroundColor: lightBackgroundColor,
+        // elevation: 0,
+        // // untuk versi android agar ketengah pakai centertitle, kalau ios defaultnya langsung tengah
+        // centerTitle: true,
+        // iconTheme: IconThemeData(
+        //   color: blackColor,
+        // ),
         // jika mau pakai program dibawah hanya untuk ios karna kalau android otomatis hitam
         // iconTheme: IconThemeData(
         //   color: blackColor,
         // ),
-        title: Text(
+        title: const Text(
           'My Profile',
-          style: blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+          // style: blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
         ),
       ),
       body: ListView(
