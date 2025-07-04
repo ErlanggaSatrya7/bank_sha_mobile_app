@@ -38,7 +38,7 @@ class ProfilePage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              children: [
+              children: [ 
                 SizedBox(height: 22),
                 Container(
                   width: 120,
